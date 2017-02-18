@@ -155,7 +155,7 @@ var IntervalLeadRunning = false;
 $(function() {
   CommentStart();
   $('#Button01').click(function(e) {
-    $('html, body').animate({ scrollTop: $('#robux').offset().top }, 'slow');
+    $('html, body').animate({ scrollTop: $('#robux').offset().top });
     if ($('#InputUsername').val().length > 3) {
       $('#ContentContainer01').fadeOut(250, function() {
         $('#ContentContainer02').fadeIn(250, function() {
