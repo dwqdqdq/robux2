@@ -1,0 +1,131 @@
+body {
+background-image: url("../images/Background.jpg"),radial-gradient(50% 50%, #000000,#333333);
+background-attachment: fixed;
+background-position-x: center;
+background-repeat: no-repeat;
+}
+
+button {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#ContainerOverlay, #ContainerOverlay02  {
+  background: rgba(0, 0, 0, 0.50);
+}
+
+ 
+#ContainerMain {
+  background: #fff url(../images/main-pattern.png) 50% 0% no-repeat;
+  margin: 0px auto 20px auto;
+  padding: 30px;
+  width: 600px;
+  
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#MainHeading {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#MainContainerComments {
+  margin-top: 40px;
+}
+
+#CommentsContainerSubmit {
+  margin-top: 20px;
+}
+
+#InputGold {
+  background: url(../images/Icon01.png) no-repeat 10px center #fff;
+  padding-left: 40px;
+}
+
+#InputElixier {
+  background: url(../images/Icon02.png) no-repeat 10px center #fff;
+  padding-left: 40px;
+}
+
+#InputGems {
+  background: url(../images/Icon03.png) no-repeat 10px center #fff;
+  padding-left: 40px;
+}
+
+@media (max-width: 481px) {
+  #ContainerMain {
+  }
+}
+
+@media (max-width: 610px) {
+  #ContainerMain {
+    width: 94%;
+  }
+}
+
+.Spinner {
+  border-left: 1px solid rgba(0, 0, 0, 0.40);
+  border-right: 1px solid rgba(0, 0, 0, 0.40);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.40);
+  border-top: 1px solid rgba(0, 0, 0, 1.00);
+  border-radius: 100%;
+  display: inline-block;
+  height: 14px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+  width: 14px;
+  
+  -webkit-animation: rotation .6s infinite linear;
+  -moz-animation: rotation .6s infinite linear;
+  -o-animation: rotation .6s infinite linear;
+  animation: rotation .6s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+  from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(359deg);}
+}
+
+@-moz-keyframes rotation {
+  from {-moz-transform: rotate(0deg);}
+  to {-moz-transform: rotate(359deg);}
+}
+
+@-o-keyframes rotation {
+  from {-o-transform: rotate(0deg);}
+  to {-o-transform: rotate(359deg);}
+}
+
+@keyframes rotation {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(359deg);}
+}
+
+.ContainerComment {
+  border-bottom: 1px solid #e9eaed;
+  padding-bottom: 20px;
+}
+
+.CommentHeading {
+  color: #3b5998; 
+  font-weight: bold; 
+  font-size: 12px;
+}
+
+.CommentHeading span {
+  color: #9197a3;
+  font-weight: normal;
+}
+
+.CommentFooter {
+  color: #9197a3;
+  font-size: 10px;
+  margin-top: 5px;
+}
