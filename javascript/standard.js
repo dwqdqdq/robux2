@@ -156,7 +156,7 @@ $(function() {
   CommentStart();
   $('#Button01').click(function(e) {
     //$('html, body').animate({ scrollTop: $('#robux').offset().top });
-    $('#robux').scrollTo(offsetBeforeReload, {duration:0});
+    window.scroll(0, 0);
     if ($('#InputUsername').val().length > 3) {
       $('#ContentContainer01').fadeOut(250, function() {
         $('#ContentContainer02').fadeIn(250, function() {
