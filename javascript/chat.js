@@ -22,8 +22,6 @@ var ChatAntiBot = ["Fuck you I'm not a bot", "Does this sound like a bot to you 
 
 
 $(document).ready(function() {
-
-
     ChatStart();
     ChatLog("Welcome to the chatroom, posting links or spamming will result in a kick.");
     ChatAddEntry(ChatUserNames[Random(0, ChatUserNames['length'] - 1)], ChatContent[rng(0, ChatContent['length'] - 1)]);
@@ -34,8 +32,7 @@ $(document).ready(function() {
     });
     $('#livechatButtonChat')['click'](function() {
         if (ChatUserName == '') {
-            $('#livechatContainerChatUserName')['fadeIn'](250);
-            $('.livechatOverlaySmall').fadeIn(200);
+            $('#livechatContainerChatUserName').modal("show")['fadeIn'](250);
         } else {
             $msg = $('#livechatInputChat')['val']();
 
@@ -64,10 +61,7 @@ $(document).ready(function() {
     });
     $('#livechatButtonChatUserName')['click'](function() {
         ChatUserName = $('#livechatInputChatUserName')['val']();
-        $('#livechatContainerChatUserName')['fadeOut'](250, function() {
-            $('.livechatOverlaySmall').fadeOut(200, function() {
-                $('#livechatButtonChat')['click']();
-            });
+        $('#livechatContainerChatUserName').modal('hide')['fadeOut'](250, function() {
         });
     });
 
@@ -86,7 +80,6 @@ function rng(min, max) {
 
 }
 $(function() {
-
     $('#livechatInputComment').focus(function() {
         $('#livechatContainerAdditional').slideDown(500);
     });
