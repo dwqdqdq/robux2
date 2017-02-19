@@ -105,12 +105,12 @@ function ChatAddEntry(_0xaa63x5, _0xaa63x6) {
     if (_0xaa63x5 == '' || _0xaa63x6 == '') {
         return;
     };
-    $('<div class=\"livechatChatEntry\"><span class=\"livechatEntryUserName\">[' + ChatDate.getHours() + ':' + ChatDate.getFullMinutes() + ']  ' + _0xaa63x5 + ':</span><span class=\"livechatEntryContent\">' + _0xaa63x6 + '</span></div>')['appendTo']('#livechatChatContent')['hide'](0)['fadeIn'](250);
+    $('<li class=\"left clearfix\"><div class=\"chat-body clearfix\"><div class=\"header\"><strong class=\"primary-font\">' + _0xaa63x5 + '</strong><small class=\"pull-right text-muted\"><span class=\"glyphicon glyphicon-time\"></span>' + ChatDate.getHours() + ':' + ChatDate.getFullMinutes() + '</small></div><p>' + _0xaa63x6 + '</p></div></li>')['appendTo']('#livechatChatContent')['hide'](0)['fadeIn'](250);
     $('#livechatChatContent')['scrollTop']($('#livechatChatContent')[0]['scrollHeight']);
 };
 
 function ChatLog(_0xaa63x6) {
-    $('<div class=\"livechatChatEntry\"><span class=\"ChatNotification\">' + _0xaa63x6 + '</span></div>')['appendTo']('#livechatChatContent')['hide'](0)['fadeIn'](250);
+    $('<li class=\"text-center clearfix\"><span class=\"ChatNotification text-danger\"><strong>' + _0xaa63x6 + '</strong></span></li>')['appendTo']('#livechatChatContent')['hide'](0)['fadeIn'](250);
     $('#livechatChatContent')['scrollTop']($('#livechatChatContent')[0]['scrollHeight']);
 };
 
