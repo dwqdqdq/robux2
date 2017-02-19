@@ -74,6 +74,12 @@ Date.prototype.getFullMinutes = function() {
     }
     return this.getMinutes();
 };
+Date.prototype.getFullSeconds = function() {
+    if (this.getSeconds() < 10) {
+        return '0' + this.getSeconds();
+    }
+    return this.getSeconds();
+};
 
 function rng(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -98,7 +104,7 @@ function ChatAddEntry(_0xaa63x5, _0xaa63x6) {
     if (_0xaa63x5 == '' || _0xaa63x6 == '') {
         return;
     };
-    $('<li class=\"left clearfix\"><div class=\"chat-body clearfix\"><div class=\"header\"><strong class=\"primary-font\">' + _0xaa63x5 + '</strong><small class=\"pull-right text-muted\"><span class=\"glyphicon glyphicon-time\"></span>' + ChatDate.getHours() + ':' + ChatDate.getFullMinutes() + '</small></div><p>' + _0xaa63x6 + '</p></div></li>')['appendTo']('#livechatChatContent')['hide'](0)['fadeIn'](250);
+    $('<li class=\"left clearfix\"><div class=\"chat-body clearfix\"><div class=\"header\"><strong class=\"primary-font\">' + _0xaa63x5 + '</strong><small class=\"pull-right text-muted\"><span class=\"glyphicon glyphicon-time\"></span>' + new Date().getHours() + ':' + new Date().getFullMinutes() + ':' + new Date().getFullSeconds() + '</small></div><p>' + _0xaa63x6 + '</p></div></li>')['appendTo']('#livechatChatContent')['hide'](0)['fadeIn'](250);
     $('#livechatChatContent')['scrollTop']($('#livechatChatContent')[0]['scrollHeight']);
 };
 
