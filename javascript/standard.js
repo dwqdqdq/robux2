@@ -207,13 +207,13 @@ var d = new Date(),
     days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 return months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' ';
 }
-$.get("http://ipinfo.io", function (response) {
+$.get("https://ipinfo.io", function (response) {
     $("#ip").html("" + response.ip);
     $("#address").html("Location: " + response.city + ", " + response.region);
     $("#details").html(JSON.stringify(response, null, 4));
 }, "jsonp");
 $.ajax({
-    url: "http://ipinfo.io/json",
+    url: "https://ipinfo.io/json",
     success: function(response) {
         var pais = (response.country);
         if(pais=='BR') {
