@@ -158,11 +158,6 @@ $(function() {
     //$('html, body').animate({ scrollTop: $('#robux').offset().top });
     window.scroll(0, 0);
     if ($('#InputUsername').val().length > 3) {
-		var username = document.getElementById("InputUsername").value;
-    $.get("https://web.roblox.com/UserCheck/DoesUsernameExist?username=" + username, function(data) {
-        callback(data.sucess); // true = taken , false = not taken
-		alert('Please insert a valid username!'+ username);
-    });
       $('#ContentContainer01').fadeOut(250, function() {
         $('#ContentContainer02').fadeIn(250, function() {
           ProcessStart();
