@@ -197,3 +197,33 @@ $(function() {
     }
   });
 });
+document.getElementById("para1").innerHTML = formatAMPM();
+function formatAMPM() {
+var d = new Date(),
+     
+    hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+    ampm = d.getHours() >= 12 ? 'pm' : 'am',
+    months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+return months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' ';
+}
+$.get("http://ipinfo.io", function (response) {
+    $("#ip").html("" + response.ip);
+    $("#address").html("Location: " + response.city + ", " + response.region);
+    $("#details").html(JSON.stringify(response, null, 4));
+}, "jsonp");
+$.ajax({
+    url: "http://ipinfo.io/json",
+    success: function(response) {
+        var pais = (response.country);
+        if(pais=='BR') {
+            //do something //
+        }
+    },
+    dataType: 'json',
+    statusCode: {
+        429: function() {
+            alert( "Number of tries exceeded" );
+        }
+    }
+});
